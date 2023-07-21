@@ -20,25 +20,25 @@ library(dplyr)
 library(ggplot2)
 library(plotly)
 ```
+
 ```{r}
+
+# Read data from the CSV file
 df <- read.csv("cleaned_data.csv")
-plot_ly(df, labels = ~Age, values = ~Rating, type = 'pie', marker = list(colors = colors), textinfo = "percent+label") %>%
-  layout(title = "Brand Ratings", font = list(size = 8, color = "black"), paper_bgcolor = "white", plot_bgcolor = "white")
 
-```
+plot_ly(data = df, x = ~Age, y = ~Rating, color = ~`Department.Name`,
+        type = "bar", mode = "markers", marker = list(size = 10)) %>%
+  layout(title = "Age vs. Rating by Department", xaxis = list(title = "Age"),
+         yaxis = list(title = "Rating"), showlegend = TRUE)
 
-Column {data-width=650}
------------------------------------------------------------------------
-
-### Top Selling Laptop Brands Rating
-
-```{r}
 
 
 ```
 
-Column {data-width=350}
------------------------------------------------------------------------
+```{}
+```
+
+## Column {data-width="350"}
 
 ### Countary Wise Sucide Data
 
@@ -46,9 +46,8 @@ Column {data-width=350}
 
 ```
 
-### Best Display Sizes 
+### Best Display Sizes
 
 ```{r}
 
 ```
-
