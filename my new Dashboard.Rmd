@@ -1,5 +1,5 @@
 ---
-title: "Books Review DashBoard"
+title: "Item Recommendation DashBoard"
 output: 
   flexdashboard::flex_dashboard:
     orientation: columns
